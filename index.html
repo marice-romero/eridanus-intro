@@ -5,71 +5,92 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Personal Portfolio">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <script src="https://kit.fontawesome.com/0ded89082c.js" crossorigin="anonymous"></script>
     </head>
     
     <body>
-        <h1>The World of Marice Romero</h1>
+            <div id="nav-bar">
+                <ul id="nav-list">
+                    <li class="nav-list-item"><a href="#About">about</a></li>
+                    <li class="nav-list-item"><a href="#Experience">experience</a></li>
+                    <li class="nav-list-item"><a href="#Skills">skills</a></li>
+                    <li class="nav-list-item"><a href="#Connect">connect</a></li>
+                </ul>
+            </div>
 
-        <section id="nav-bar">
-            <ul id="nav-list">
-                <li><a href="#About">About</a></li>
-                <li><a href="#Experience">Experience</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#Connect">Connect</a></li>
-            </ul>
-        </section>
+            <h1>the world of marice romero</h1>
         
-        <section id="About">
-            <h2>About</h2>
-            <p>I am an aspiring software developer seeking to learn everything I can about full-stack development. 
-                When I'm not coding, you can find me reading, baking, playing D&D, snuggling with my cat, winning pub trivia, randomly quoting movies, or doing all of the above at the same time.
-            </p>
-        </section>
+        <div class="container about-container">
+            <img class="about-img" src="images/marice.png">
+            <section id="About">
+                <h2>about me</h2>
+                 <p class="text">I am an aspiring software developer seeking to learn everything I can about full-stack development. 
+                        When I'm not coding, you can find me reading, baking, playing D&D, snuggling with my cat, winning pub trivia, randomly quoting movies, or doing all of the above at the same time.
+                </p>
+            </section>
+        </div>
+
+        <div class="container experience-container">
+            <section id="Experience">
+                <h2>experience</h2>
+                <p class="text">Currently a student at Code the Dream, but in a past life I worked
+                    as a Manager of Project Coordination at NielsenIQ, which involved leading
+                    a team in market research project management, translating client needs
+                    into relevant survey questionnaires, and delivering actionable insights 
+                    on new product innovation and renovation.
+                </p>
+            </section>
+            <img src="images/rue.png">
+        </div>
         
-        <section id="Experience">
-            <h2>Experience</h2>
-            <p>Currently a student at Code the Dream, but in a past life I worked
-                as a Manager of Project Coordination at NielsenIQ, which involved leading
-                a team in market research project management, translating client needs
-                into relevant survey questionnaires, and delivering actionable insights 
-                on new product innovation and renovation.
-            </p>
-        </section>
+        <div class="container skills-container">
+            <img class="skills-img" src="images/monstera.gif">
+            <section id="Skills">
+                <h2>skills</h2>
+                <ul class="text"></ul>
+            </section>
+        </div>
         
-        <section id="Skills">
-            <h2>Skills</h2>
-            <ul></ul>
-        </section>
+        <div class="container connect-container">
+            <section id="Connect">
+                <h2>connect</h2>
+                <ul class="text">
+                    <li><a href="mailto: marice.romero@gmail.com"><i class="fa-solid fa-envelope"></i> marice.romero@gmail.com</a></li>
+                    <li><i class="fa-brands fa-linkedin"></i> (tbd)</li>
+                    <li><a href="https://github.com/marice-romero"><i class="fa-brands fa-github"></i> github.com/marice-romero</a></li>
+                </ul>
+            </section>
+        </div>
 
-        <section id="Connect">
-            <h2>Connect</h2>
-            <p>email: marice.romero@gmail.com</p>
-            <p>linkedin: (tbd)</p>
-            <p>github: <a href="https://github.com/marice-romero">github.com/marice-romero</a></p>
-        </section>
-
-        <section>
-            <h2>Leave a Message</h2>
-            <form name="leave_message" id="leave_message">
-                <label for="name">Name</label>
-                <br>
-                <input type="text" name="usersName" required="true" id="name">
-                <br>
-                <label for="email">Email Address</label>
-                <br>
-                <input type="text" name="usersEmail" required="true" id="email">
-                <br>
-                <label for="message">Message</label>
-                <br>
-                <textarea name="usersMessage" required="true" id="message"></textarea>
-                <br>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-
-        <section id="messages">
-            <ul id="list"></ul>
-        </section>
+        <div class="container message-container">
+            <section id="message-form">
+                <h2>leave a message</h2>
+                <form name="leave_message" id="leave_message">
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" name="usersName" required="true" id="name">
+                    <br>
+                    <label for="email">Email Address</label>
+                    <br>
+                    <input type="text" name="usersEmail" required="true" id="email">
+                    <br>
+                    <label for="message">Message</label>
+                    <br>
+                    <textarea name="usersMessage" required="true" id="message"></textarea>
+                    <br>
+                    <button class="submit" type="submit">Submit</button>
+                </form>
+                <section id="messages">
+                    <ul id="list"></ul>
+                </section>
+            </section>
+    
+            
+        </div>
+        
 
         <footer></footer>
         <script src="js/index.js"></script>
