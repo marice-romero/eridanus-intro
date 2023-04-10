@@ -182,7 +182,8 @@ img {
 */
 
 #Skills li,
-#list li {
+#list li,
+#projects li {
   margin: 1vw;
   list-style-type: none;
   border-style: solid;
@@ -192,12 +193,19 @@ img {
 }
 
 .connect-container,
-.message-container {
+.message-container,
+.projects-container {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0;
 }
 
-#Connect {
+.connect-container {
+  background-color: #daf9f1;
+  padding: 2vw;
+}
+
+#Connect,
+#projects {
   grid-column: 2 / 4;
   width: 100%;
 }
@@ -212,7 +220,6 @@ img {
 }
 
 .message-container {
-  background-color: #daf9f1;
   padding: 2vw;
 }
 
