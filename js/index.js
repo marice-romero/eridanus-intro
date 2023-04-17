@@ -108,3 +108,22 @@ function fixPosition() {
     header.classList.remove("fixed");
   }
 }
+
+const gitHubRequest = new XMLHttpRequest();
+gitHubRequest.open("GET", "https://api.github.com/users/marice-romero/repos");
+gitHubRequest.send();
+
+let repositories = [];
+gitHubRequest.addEventListener("load", function () {
+  repositories = JSON.parse(this.response);
+  console.log(repositories);
+
+  const projectSection = document.getElementById("projects");
+  const projectList = projectSection.querySelector("ul");
+
+  for (let i = 0; i < repositories.length; i++) {
+    const project = document.createElement("li");
+    project.innerHTML = `<a href="${repositories[i].html_url}">${repositories[i].name}</a>`;
+    projectList.appendChild(project);
+  }
+});
