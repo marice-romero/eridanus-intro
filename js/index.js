@@ -109,6 +109,7 @@ function fixPosition() {
   }
 }
 
+/* XMLHTTPRequest version
 const gitHubRequest = new XMLHttpRequest();
 gitHubRequest.open("GET", "https://api.github.com/users/marice-romero/repos");
 gitHubRequest.send();
@@ -126,4 +127,25 @@ gitHubRequest.addEventListener("load", function () {
     project.innerHTML = `<a href="${repositories[i].html_url}">${repositories[i].name}</a>`;
     projectList.appendChild(project);
   }
-});
+}); */
+
+fetch("https://api.github.com/users/marice-romero/repos", { mode: "cors" })
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < response.length; i++) {
+      const project = document.createElement("li");
+      project.innerHTML = `<a href="${response[i].html_url}">${response[i].name}</a>`;
+      projectList.appendChild(project);
+    }
+  })
+  .catch(function (error) {
+    console.error("Error!");
+    const errorDisplay = document.createElement("h3");
+    errorDisplay.textContent = `The limit does not exist! Github says: ${error.message}`;
+    projectSection.appendChild(errorDisplay);
+  });
