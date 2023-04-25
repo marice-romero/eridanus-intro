@@ -7,7 +7,7 @@ const skills = [
   "SPSS",
   "Wondershare Filmora",
   "Questionnaire Design",
-  "Proficient in Spanish, French, and Japanese",
+  "Proficient in Spanish and French",
   "Pub Trivia Champion",
 ];
 const skillsSection = document.querySelector("#Skills");
@@ -16,6 +16,7 @@ const skillsList = skillsSection.querySelector("ul");
 for (let i = 0; i < skills.length; i++) {
   const skill = document.createElement("li");
   skill.textContent = skills[i];
+  skill.classList.add(`skill-${[i]}`);
   skillsList.appendChild(skill);
 }
 
@@ -95,17 +96,22 @@ function submitMessage(event) {
   messageForm.reset();
 }
 
-const header = document.getElementById("header");
-const fixed = header.offsetTop;
+const navBar = document.getElementById("nav-bar");
+const fixed = navBar.offsetTop;
+const scrollHeader = document.getElementById("scroll-header");
 
 window.onscroll = function () {
   fixPosition();
 };
 function fixPosition() {
   if (window.pageYOffset > fixed) {
-    header.classList.add("fixed");
+    navBar.classList.add("fixed");
+    scrollHeader.classList.remove("top-header-hide");
+    scrollHeader.classList.add("top-header-show");
   } else {
-    header.classList.remove("fixed");
+    navBar.classList.remove("fixed");
+    scrollHeader.classList.remove("top-header-show");
+    scrollHeader.classList.add("top-header-hide");
   }
 }
 
@@ -140,6 +146,7 @@ fetch("https://api.github.com/users/marice-romero/repos", { mode: "cors" })
     for (let i = 0; i < response.length; i++) {
       const project = document.createElement("li");
       project.innerHTML = `<a href="${response[i].html_url}">${response[i].name}</a>`;
+      project.classList.add(`project-${[i]}`);
       projectList.appendChild(project);
     }
   })
